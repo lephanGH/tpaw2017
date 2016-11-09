@@ -1,23 +1,69 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP5</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>TP5</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+	<link href="mystyle.css" rel="stylesheet" type="text/css"/>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script> <!-- define $(document).ready(function() -->
+	<script src="meteo.js"></script>
+
+	<title>AW_TP5</title>
+</head>
+
+<body>
+<div align="center"><h1>TP AW #5: JS + Météo</h1></div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12" align="center">
+			<form id="searchCity">
+				<input type="button" id="GPS" value="GPS" onclick="getLocation()"/>
+				<input type="search" id="city" required placeholder="City name or 'latitude longtitude'" value="" size="35"/>
+				<input type="submit" id="recherche" value="Recherche"/>
+				<button type="button" id="help">Help</button>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" align="center"> <b><h2><div id="cityName"></div></h2></b> </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" align="center"> <div id="time"></div> </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" align="center"> 
+			<div id="icon"> <img src="" ></img> </div>
+			<b><h4><div id="temp"></div></h4></b>
+			<div id="weather"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-1" align="right"> <div id="humidity_header"></div></div>
+		<div class="col-xs-2" align="center"> <div id="humidity"></div> </div>
+		<div class="col-xs-5"> </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-1" align="right"><div id="cloud_header"></div></div>
+		<div class="col-xs-2" align="center"> <div id="cloud"></div> </div>
+		<div class="col-xs-5"> </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-1" align="right"><div id="wind_header"></div></div>
+		<div class="col-xs-2" align="center"> <div id="wind"></div> </div>
+		<div class="col-xs-5"> </div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4"></div>
+		<div class="col-xs-4" align="right"> <div id="mapholder"></div> </div>
+		<div class="col-xs-4"> </div>
+	</div>
+</div>
+</body>
+
 </html>
