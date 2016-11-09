@@ -1,0 +1,17 @@
+body {
+    background-color: lightgray;
+	background-image: url("circuit.GIF");
+	background-blend-mode: screen;
+}
+
+table{
+	background-color: white;
+}
+
+a{
+	color: blue;
+}
+
+a:hover{
+	color: orange;
+}
