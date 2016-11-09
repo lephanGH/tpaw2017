@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<script type="text/javascript" src="formulaire2.js"></script>
+	<link href="formulaire.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <h1>Saisie d'une fiche "Personne"</h1>
+	<font color=#FF0000>*Les champs sont obligatoire.</font>
+	<table style="width:100%">
+	<form action="page1.html" methox="post">
+		<tr>
+			<td width="20%">Nom*</td>
+			<td> <input type="text" name="nom" id="nom"/></td>
+		</tr>
+		<tr>
+			<td>Prénom*</td>
+			<td><input type="text" name="prenom" id="prenom"/></td>
+		</tr>
+		<tr>
+			<td>Date de naissance*</td>
+			<td><input type="text" name="naissance" id="naissance" placeholder="JJ/MM/AAAA"/></td>
+		</tr>
+		<tr>
+			<td>Adresse*</td>
+			<td><input type="text" name="adresse" id="adresse"/></td>
+		</tr>
+		<tr>
+			<td>Mail*</td>
+			<td><input type="text" name="mail" id="mail"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="button" value="Valider" onclick="validation();"/></td>
+		</tr>
+	</table>
+	<div id="error" ></div>
+	<div id="resultat"></div>
+</body>
+</html>
