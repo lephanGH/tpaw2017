@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" align="center">
+            <form id="searchCity">
+                <input type="button" id="GPS" ng-click="gps()" value="GPS" />
+                <input type="search" id="city" ng-model="city" required placeholder="City name or 'latitude longtitude'" value="" size="35" />
+                <input type="submit" id="recherche" ng-click="recherche()" value="Search" />
+                <button type="button" id="help">Help</button>
+            </form>
+        </div>
+    </div>
+    <div class="row" ng-if="meteo">
+        <!--<div class="col-xs-12" align="center"> <b><h2><div id="cityName"></div></h2></b> </div>-->
+        <div class="col-xs-12" align="center">
+            {{meteo.name}}
+        </div>
+        <div class="row">
+            <div class="col-xs-12" align="center">
+                <div id="time"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" align="center">
+                <div id="icon">
+                    <!--<img src="http://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png"></img>-->
+                    <i class="wi wi-owm-day-{{meteo.weather[0].id}}"></i>
+                </div>
+                <b><h4><div id="temp"> {{meteo.main.temp | number:1}}°C (*) </div></h4></b>
+                <div id="weather"> {{meteo.weather[0].description}} </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-1" align="right">
+                <div id="humidity_header"></div>
+            </div>
+            <div class="col-xs-2" align="center">
+                <div id="humidity"></div>
+            </div>
+            <div class="col-xs-5"> </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-1" align="right">
+                <div id="cloud_header"></div>
+            </div>
+            <div class="col-xs-2" align="center">
+                <div id="cloud"></div>
+            </div>
+            <div class="col-xs-5"> </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-1" align="right">
+                <div id="wind_header"></div>
+            </div>
+            <div class="col-xs-2" align="center">
+                <div id="wind"></div>
+            </div>
+            <div class="col-xs-5"> </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4" align="right">
+                <div id="mapholder"></div>
+            </div>
+            <div class="col-xs-4"> </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4"> </div>
+            <div class="col-xs-4" align="center">(*)For France, convert from °K by -273</div>
+            <div class="col-xs-4"> </div>
+        </div>
+    </div>
+    <p ng-if="errorMsg"> {{errorMsg}} </p>
+</div>
