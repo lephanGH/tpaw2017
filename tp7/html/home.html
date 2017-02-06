@@ -1,0 +1,33 @@
+<form data-ng-submit="recherche()" name="myForm">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-btn">
+			    <button class="btn btn-warning" type="button" data-ng-click="gps()"> GPS </button>
+			</span>
+            <input type="search" name="city" ng-model="city" required ng-minlength="3" ng-maxlength="20" class="form-control" />
+
+            <span class="input-group-btn">
+                <!-- TP7 : l’attribut nb-disabled rendra cliquable le bouton “rechercher” seulement si le champ de saisie est correctement rempli -->
+                <button class="btn btn-primary" type="submit"  ng-disabled="!myForm.$valid"> 
+                    Recherche
+                </button>
+		    </span>
+        </div>
+    </div>
+
+    <!-- TP7 : ici, on gère l’affichage des messages d’erreur  selon l’état du champ de saisie -->
+    <!--<div ng-messages="myForm.city.$error" role="alert">
+	    <div ng-message="required" class="label label-danger">Veuillez saisir une ville SVP</div>
+	  </div>-->
+</form>
+
+<div ng-if="forecast" || "FiveDays" class="text-center">
+    <h1>{{forecast.city.name}}</h1>
+    <img ng-src="https://openweathermap.org/img/w/{{forecast.list[0].weather[0].icon}}.png" alt="" style="width:128px;height:128px;" />
+    <h3>{{forecast.list[0].main.temp | number:1}}°C</h3>
+    {{forecast.list[0].weather[0].description}}
+    <h2>- The next 5 days -</h2>
+</div>
+<div id="FiveDays" class="text-center "></div>
+
+<p ng-if=" errorMsg "> {{errorMsg}} </p>
