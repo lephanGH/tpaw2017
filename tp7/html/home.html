@@ -21,7 +21,7 @@
 	  </div>-->
 </form>
 
-<div ng-if="forecast" || "FiveDays" class="text-center">
+<div ng-if="forecast" || "meteo" class="text-center">
     <h1>{{forecast.city.name}}</h1>
     <img ng-src="https://openweathermap.org/img/w/{{forecast.list[0].weather[0].icon}}.png" alt="" style="width:128px;height:128px;" />
     <h3>{{forecast.list[0].main.temp | number:1}}°C</h3>
